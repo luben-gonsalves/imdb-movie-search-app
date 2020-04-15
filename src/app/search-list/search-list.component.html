@@ -3,6 +3,7 @@
     class="card mt-3 mr-3 pointer"
     style="width: 18rem;"
     *ngFor="let movie of movieList"
+    (click)="navigateToMovieDetails(movie.imdbID)"
   >
     <img src="{{ movie.Poster }}" class="card-img-top" alt="movie.Title" />
     <div class="card-body">

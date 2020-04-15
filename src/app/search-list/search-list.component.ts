@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-search-list",
@@ -7,7 +8,11 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class SearchListComponent implements OnInit {
   @Input() movieList: [];
-  constructor() {}
+  constructor(private _router: Router) {}
 
   ngOnInit() {}
+
+  navigateToMovieDetails(id: string): void {
+    this._router.navigate([`movie/${id}`]);
+  }
 }

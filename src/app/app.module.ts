@@ -9,8 +9,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SearchListComponent } from './search-list/search-list.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 @NgModule({
-  declarations: [AppComponent, SearchComponent, SearchListComponent],
+  declarations: [AppComponent, SearchComponent, SearchListComponent, MovieDetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

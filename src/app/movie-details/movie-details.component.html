@@ -1,0 +1,117 @@
+<div
+  class="card mt-5"
+  style="width: 100rem; max-width: 50%; margin-right: auto; margin-left: auto;"
+>
+  <div class="row">
+    <div class="col-4">
+      <img
+        class="card-img-top"
+        src="{{ movieData.Poster }}"
+        alt="Card image cap"
+      />
+    </div>
+    <div class="col-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ movieData.Title }}</h5>
+        <p class="card-text">
+          {{ movieData.Plot }}
+        </p>
+        <span
+          >Genre :
+          <span style="font-weight: 500;">{{ movieData.Genre }}</span> </span
+        ><br />
+        <span
+          >language :
+          <span style="font-weight: 500;">{{ movieData.Language }}</span> </span
+        ><br />
+        <span
+          >Rated :
+          <span style="font-weight: 500;">{{ movieData.Rated }}</span> </span
+        ><br />
+        <span
+          >Released :
+          <span style="font-weight: 500;">{{ movieData.Released }}</span> </span
+        ><br />
+        <span
+          >IMDB Rating :
+          <span style="font-weight: 500;">{{
+            movieData.imdbRating
+          }}</span> </span
+        ><br />
+        <div id="myReview" *ngIf="ifReviewExists">
+          <span
+            >Your Review :
+            <span style="font-weight: 500;">{{ review }}</span></span
+          >
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-sm btn-secondary mr-2 mt-3"
+          (click)="goToSearchScreen()"
+        >
+          Go Back
+        </button>
+        <button
+          type="button"
+          class="btn btn-sm btn-primary mt-3"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          Review
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Please Enter your Review
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <textarea
+          id="w3mission"
+          rows="4"
+          cols="50"
+          class="form-control"
+          [(ngModel)]="review"
+        ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="reviewSubmitted()"
+          data-dismiss="modal"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>

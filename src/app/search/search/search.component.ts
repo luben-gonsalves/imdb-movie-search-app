@@ -24,14 +24,11 @@ export class SearchComponent implements OnInit {
     // spinner start on fetching serachText
     this._spinner.show();
 
-    this._searchMovies
-      .fetchPdfFromService(this.searchText)
-      .subscribe((data) => {
-        // spinner stops after fetching
-        this._spinner.hide();
-        this.movieResults = data["Search"];
-        console.log(data);
-      });
+    this._searchMovies.fetchMovies(this.searchText).subscribe((data) => {
+      // spinner stops after fetching
+      this._spinner.hide();
+      this.movieResults = data["Search"];
+    });
     this.searchText = "";
   }
 }

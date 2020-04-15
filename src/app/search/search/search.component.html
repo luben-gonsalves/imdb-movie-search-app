@@ -1,34 +1,22 @@
-<div class="d-flex flex-column">
-  <nav class="navbar navbar-light bg-dark">
-    <a class="navbar-brand text-white" href="#">
-      Movies Search
-    </a>
-  </nav>
-
-  <!-- search box -->
-  <div
-    class="mt-5 input-group flex-nowrap"
-    style="max-width: 50%; margin-right: auto; margin-left: auto;"
-  >
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="addon-wrapping"
-        ><i class="fa fa-search"></i
-      ></span>
-    </div>
-    <input
-      type="text"
-      class="form-control"
-      [(ngModel)]="searchText"
-      placeholder="Search Movies..."
-      (keyup.enter)="search()"
-      aria-describedby="addon-wrapping"
-    />
+<!-- search box -->
+<div
+  class="mt-5 input-group flex-nowrap"
+  style="max-width: 50%; margin-right: auto; margin-left: auto;"
+>
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping"
+      ><i class="fa fa-search"></i
+    ></span>
   </div>
-  <app-search-list [movieList]="movieResults"></app-search-list>
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="searchText"
+    placeholder="Search Movies..."
+    (keyup.enter)="search()"
+    aria-describedby="addon-wrapping"
+  />
 </div>
+<app-search-list [movieList]="movieResults"></app-search-list>
 
 <ngx-spinner></ngx-spinner>
-
-<!-- Title: "Raiders of the Lost Ark" Year: "1981" imdbID: "tt0082971" Type: "movie"
-Poster:
-"https://m.media-amazon.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_SX300.jpg" -->
